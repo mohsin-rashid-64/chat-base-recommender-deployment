@@ -1,0 +1,135 @@
+.container-for-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(265px, 1fr));
+  gap: 25px;
+  margin-top: 10px;
+  justify-content: center;
+  align-items: center;
+  padding-left: 60px;
+}
+
+.all-card {
+  position: relative;
+  max-width: 290px;
+  height: 270px; /* increased height to accommodate the icon and divider */
+  cursor: pointer;
+  padding: 6px;
+  border: 2px solid #ccc;
+  border-radius: 18px;
+  box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s, border 0.3s, background-color 0.7s;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+}
+
+.all-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.2);
+  border: 2px solid #4169E1;
+  /* background-image: linear-gradient(to top, rgb(254, 255, 255) 0%, #ccd9f3 100%); */
+  color: #4169E1;
+
+}
+.all-card:hover .icon {
+  color: #4169E1; /* Color when card is hovered */
+}
+.dividerhover{
+  height: 3px;
+  background-color:#4169E1;
+  margin: 10px auto;
+}
+.descriptionhover{
+  font-size: 12px;
+  color: #4169E1;
+}
+/* Icon styles */
+.icon {
+  /* position: absolute; */
+  top: 8px;
+  left: 8px;
+ /* display: flex;
+  flex-direction: column; 
+  align-items: flex-start;
+  justify-content: start; */
+  font-size: 40px;
+   
+  
+ 
+}
+
+.title {
+  font-size: 22px;
+  font-weight:bold;
+  margin-top: 10px; /* spacing after the icon */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Arrow icon with hover effect */
+.arrow-icon {
+  font-size: 22px;
+  margin-left: 10px;
+  transition: transform 0.3s ease;
+}
+
+.rotate {
+  transform: rotate(-45deg); /* Rotate to be between right and upper on hover */
+}
+
+.divider {
+  height: 3px;
+  background-color: #b1adad;
+  margin: 10px auto; /* centered divider */
+}
+
+.description {
+  font-size: 12px;
+}
+
+@media (max-width: 768px) {
+  .container-for-cards {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column; /* Stack cards vertically */
+    gap: 10px;
+    padding-left: 0; /* Remove padding for mobile */
+  }
+
+  .all-card {
+    width: 100%; /* Set card width to 100% of the container */
+    height: auto; /* Allow the card to adjust height based on content */
+    max-height: none; /* Remove max-height to prevent cropping */
+    padding: 20px; /* Adjust padding for mobile */
+    margin-left: 0; /* Center the card on mobile */
+    border-radius: 12px; /* Slightly smaller border-radius for mobile */
+  }
+
+  .all-card .title {
+    font-size: 1.2rem; /* Slightly smaller font for mobile */
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .arrow-icon {
+    font-size: 16px; /* Reduce arrow icon size for mobile */
+    margin-left: 5px; /* Adjust margin for mobile view */
+  }
+
+  .divider {
+    height: 2px; /* Thinner divider for mobile */
+    background-color: #b1adad;
+    margin: 8px auto;
+  }
+
+  .description {
+    font-size: 1rem; /* Adjust font size for mobile */
+    display: block; /* Show the description on mobile */
+  }
+}
+
